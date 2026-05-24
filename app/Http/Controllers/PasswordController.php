@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Services\HibpService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use App\Models\PasswordCheck;
 
 class PasswordController extends Controller
 {
@@ -19,6 +19,12 @@ class PasswordController extends Controller
         ]);
 
         $count = $this->hibpService->checkPassword($request->password);
+
+        PasswordCheck::create([
+            'ip_address' => $request->ip(),
+            'breached' => $count > 0,
+            'breach_count' => $count,
+        ]);
 
         return response()->json([
             'breached' => $count > 0,
