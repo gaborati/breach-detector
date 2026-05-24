@@ -7,4 +7,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/check-password', [PasswordController::class, 'check']);
+Route::post('/check-password', [PasswordController::class, 'check'])
+->middleware('throttle:10,1');
