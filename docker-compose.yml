@@ -30,10 +30,10 @@ services:
         container_name: breach-detector-db
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: breach_detector
-            MYSQL_ROOT_PASSWORD: secret
-            MYSQL_PASSWORD: secret
-            MYSQL_USER: breach_user
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
             MYSQL_ROOT_HOST: "%"
         networks:
             - breach-network
