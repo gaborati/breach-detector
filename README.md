@@ -1,6 +1,6 @@
 This means even the HIBP API never sees your actual password or full hash.
 
-## ✨ Features
+##  Features
 
 - Check passwords against 900M+ breached passwords
 - k-Anonymity model — plaintext passwords never leave your server
@@ -10,7 +10,7 @@ This means even the HIBP API never sees your actual password or full hash.
 - REST API with JSON responses
 - Docker ready — runs with two commands
 
-## 🚀 Quick Start (Docker)
+##  Quick Start (Docker)
 
 ```bash
 git clone https://github.com/gaborati/breach-detector.git
@@ -22,7 +22,7 @@ docker exec breach-detector-app php artisan migrate
 
 Open [http://localhost:8080](http://localhost:8080)
 
-## ⚙️ Manual Setup
+##  Manual Setup
 
 Requirements: PHP 8.2+, Composer, MySQL
 
@@ -36,7 +36,7 @@ php artisan migrate
 php artisan serve
 ```
 
-## 📡 API
+## API
 
 **POST** `/api/check-password`
 
@@ -58,13 +58,13 @@ Response:
 
 Rate limit: 10 requests per minute per IP.
 
-## 🔒 Security Notes
+##  Security Notes
 
 - Passwords are never stored or logged
 - k-anonymity ensures only a 5-char SHA1 prefix is sent to the HIBP API
 - Replace default passwords before any production use
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend**: PHP 8.2, Laravel 10
 - **Database**: MySQL 8
